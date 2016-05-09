@@ -1,0 +1,151 @@
+<div class="container">
+    <div class="text-center"><h1>Edit Profile</h1></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="text-center">
+                    <img src="http://lorempixel.com/140/140/people/9/"
+                         class="avatar center-block img-circle img-thumbnail"
+                         alt="avatar">
+                    Current Profile photo
+                </div>
+            </div>
+
+            <form data-ng-submit="submit()" role="form" name="profileUpdate" novalidate>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="text-center">
+                        <div ngf-drop ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="false"
+                             ngf-allow-dir="false" ngf-accept="'.jpg,.png'">Drop here
+                        </div>
+
+                        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                        Upload a different photo...
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="text-center"><u>Basic Info</u></div>
+                    <div class="row" style="padding-bottom: 10px;">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-md-4"><label>First Name:</label></div>
+                            <div class="col-xs-12 col-sm-8 col-md-8"><input type="text" name="firstName"
+                                                                            data-ng-model="firstName" id="firstName"
+                                                                            class="form-control input-lg"
+                                                                            placeholder="First Name(Optional)"
+                                                                            tabindex="1"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-md-4"><label>Last Name:</label></div>
+                            <div class="col-xs-12 col-sm-8 col-md-8"><input type="text" name="lastName"
+                                                                            data-ng-model="lastName" id="lastName"
+                                                                            class="form-control input-lg"
+                                                                            placeholder="Last Name(Optional)"
+                                                                            tabindex="2"></div>
+                        </div>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-md-4"><label>Username:</label></div>
+                            <div class="col-xs-12 col-sm-8 col-md-8"><input type="text" name="username"
+                                                                            data-ng-model="username" id="username"
+                                                                            class="form-control input-lg"
+                                                                            placeholder="User Name" tabindex="3"
+                                                                            data-ng-minlength="4" data-ng-maxlength="8"
+                                                                            data-ng-required></div>
+                        </div>
+                        <p class="help-block text-center"
+                           data-ng-show="profileUpdate.username.$error.minlength || profileUpdate.username.$error.maxlength">
+                            Username must
+                            be
+                            between 4 and 8 characters long!</p>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row" style="padding-bottom: 10px;">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-md-4"><label>Password:</label></div>
+                            <div class="col-xs-12 col-sm-8 col-md-8"><input type="password" name="password"
+                                                                            data-ng-model="password" id="password"
+                                                                            class="form-control input-lg"
+                                                                            data-ng-minlength="6" data-ng-maxlength="20"
+                                                                            placeholder="Password" tabindex="5"
+                                                                            data-ng-required></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-md-4"><label>Confirm Password:</label></div>
+                            <div class="col-xs-12 col-sm-8 col-md-8"><input type="password" name="password_confirmation"
+                                                                            data-ng-model="password_confirmation"
+                                                                            id="password_confirmation"
+                                                                            data-ng-minlength="6"
+                                                                            data-ng-maxlength="20"
+                                                                            class="form-control input-lg"
+                                                                            placeholder="Confirm Password"
+                                                                            tabindex="6" validate-equals='password'
+                                                                            data-ng-required></div>
+                        </div>
+                        <p class="help-block text-center"
+                           data-ng-show="profileUpdate.password.$error.minlength || profileUpdate.password.$error.maxlength">
+                            Password
+                            must
+                            be
+                            between 6 and 15 characters long!</p>
+
+                        <p class="help-block text-center"
+                           data-ng-show="profileUpdate.password_confirmation.$dirty && profileUpdate.password_confirmation.$invalid">
+                            Passwords do not match.</p>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-4 col-md-4"><label>Gender:</label></div>
+                            <div class="col-xs-12 col-sm-8 col-md-8">
+                                <label class="radio-inline"><input type="radio"
+                                                                   name="optgender"
+                                                                   data-ng-model="optgender"
+                                                                   value="0">Male</label>
+                                <label class="radio-inline"><input type="radio" name="optgender"
+                                                                   data-ng-model="optgender"
+                                                                   value="1">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="row">
+                        <div class="text-center"><u>About Me</u></div>
+                        <div data-text-angular class="reset-this" data-ng-model="htmlVariable"
+                             data-ta-toolbar-button-class="btn btn-sm text-center"
+                             data-ta-toolbar="[['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
+					                    ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
+				                    	['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent'],
+					                    ['wordcount', 'charcount']]"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="g-recaptcha" style="padding-top:30px;padding-bottom: 10px;" vc-recaptcha
+                             key="gRecaptchModel.key"
+                             on-create="setgRecaptchWidgetId(widgetId)"
+                             on-success="setgRecaptchResponse(response)"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <div class="col-xs-12 col-md-6">
+                            <button data-ng-disabled="profileUpdate.$invalid" class="btn btn-primary btn-block btn-lg">
+                                Update
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <button class="btn btn-primary btn-block btn-lg">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div data-ng-include="'init-footer'"></div>

@@ -1,0 +1,113 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form data-ng-submit="submit()" role="form" name="register" novalidate>
+                <div class="text-center">
+                    <h1>Please Sign Up
+                        <small>It's free and always will be.</small>
+                    </h1>
+                </div>
+                <hr class="colorgraph">
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-12 col-sm-6 col-md-6">-->
+                        <!--<div class="form-group">-->
+                            <!--<input type="text" name="firstName" data-ng-model="firstName" id="firstName"-->
+                                   <!--class="form-control input-lg" placeholder="First Name(Optional)"-->
+                                   <!--data-ng-pattern="/^[a-zA-Z0-9]*$/" tabindex="1"-->
+                                   <!--autofocus>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-12 col-sm-6 col-md-6">-->
+                        <!--<div class="form-group">-->
+                            <!--<input type="text" name="lastName" data-ng-model="lastName" id="lastName"-->
+                                   <!--class="form-control input-lg" placeholder="Last Name(Optional)"-->
+                                   <!--data-ng-pattern="/^[a-zA-Z0-9]*$/" tabindex="2">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <input type="text" name="username" data-ng-model="username" id="username"
+                           class="form-control input-lg"
+                           placeholder="User Name" tabindex="3" data-ng-minlength="4" data-ng-maxlength="10"
+                           data-ng-pattern="/^[a-zA-Z0-9]*$/" data-ng-trim="false" data-to-lower-case
+                           data-ng-required>
+                </div>
+                <p class="help-block text-center"
+                   data-ng-show="register.username.$error.minlength || register.username.$error.maxlength">Username must
+                    be
+                    between 4 and 10 characters long!</p>
+
+                <div class="form-group">
+                    <input type="email" name="email" data-ng-model="email" id="email" class="form-control input-lg"
+                           placeholder="Email Address" tabindex="4"
+                           data-ng-trim="true" data-to-lower-case data-ng-required>
+                </div>
+                <p class="help-block text-center" data-ng-show="register.email.$dirty && register.email.$invalid">Please
+                    enter a proper email.</p>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="password" name="password" data-ng-model="password" id="password"
+                                   class="form-control input-lg" data-ng-minlength="6"
+                                   data-ng-maxlength="20"
+                                   placeholder="Password" tabindex="5" data-ng-required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="password" name="password_confirmation" data-ng-model="password_confirmation"
+                                   id="password_confirmation" data-ng-minlength="6"
+                                   data-ng-maxlength="20"
+                                   class="form-control input-lg"
+                                   placeholder="Confirm Password"
+                                   tabindex="6" validate-equals='password' data-ng-required>
+                        </div>
+                    </div>
+                    <p class="help-block text-center"
+                       data-ng-show="register.password.$error.minlength || register.password.$error.maxlength">Password
+                        must
+                        be
+                        between 6 and 20 characters long!</p>
+
+                    <p class="help-block text-center"
+                       data-ng-show="register.password_confirmation.$dirty && register.password_confirmation.$invalid">
+                        Passwords do not match.</p>
+                </div>
+                <!--<div class="form-group text-center">-->
+                    <!--<label class="radio-inline"><input type="radio" name="optgender" data-ng-model="optgender" value="0"-->
+                            <!--&gt;Male</label>-->
+                    <!--<label class="radio-inline"><input type="radio" name="optgender" data-ng-model="optgender" value="1"-->
+                            <!--&gt;Female</label>-->
+                    <!--<br>(optional)-->
+                <!--</div>-->
+                <div class="row">
+                    <div class="g-recaptcha" vc-recaptcha key="gRecaptchModel.key"
+                         on-create="setgRecaptchWidgetId(widgetId)" on-success="setgRecaptchResponse(response)"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        By clicking <strong class="label label-primary">Submit</strong>, you agree to the <a
+                            href="javascript:window.open('/disclaimer','Terms and Conditions','width=500,height=500')"
+                            target="_blank">
+                        Terms and Conditions</a> set out by this site, including our Cookie Use.
+                    </div>
+                </div>
+
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <input data-ng-disabled="register.$invalid" type="submit"
+                               class="btn btn-primary btn-block btn-lg"
+                               tabindex="7">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <a data-ui-sref="login" class="btn btn-success btn-block btn-lg">Log in</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div data-ng-include="'init-footer'"></div>

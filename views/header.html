@@ -1,0 +1,78 @@
+<div class="container" data-ng-controller="HeaderCtrl" style="position: relative">
+    <div data-ng-if="ariGirl"><img data-img-preload id="ariGirl" data-ng-src="/static/img/arigirl.png" class="rightFiesta animated bounceIn" alt="" style="pointer-events: none;" /></div>
+    <nav class="row" role="navigation">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div data-ng-if="isAuthenticated()" class="text-center navbar-btn">
+                <a data-ui-sref="donate"><i class="fa fa-shopping-cart"></i> Your Cart</a> | 0 coins <a
+                    data-ui-sref="donate">(buy more)</a>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center">Server time:
+                <div id="divUTC"></div>
+                UTC
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+            <div data-ng-if="!isAuthenticated()"><a data-ui-sref="login">
+                <button type="button" class="btn btn-sm navbar-btn">
+                    Log in
+                </button>
+            </a></div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+            <div data-ng-if="isAuthenticated()">
+                <div class="btn-group">
+                    <div class="dropdown" dropdown on-toggle="toggled(open)">
+                        <button type="button" class="btn btn-sm navbar-btn dropdown-toggle" dropdown-toggle>
+                            My Account
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a data-ui-sref="profile">View Profile</a></li>
+                            <li><a data-ui-sref="profile-edit">Edit Profile</a></li>
+                            <li><a data-ui-sref="logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="row">
+        <div class="col-md-3 col-lg-3">
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <img data-img-preload data-ng-src="/static/img/logo.png" class="img-responsive center-block animated flipInX"
+                 style="pointer-events: none;"
+                 alt="Winds of Arithia"/>
+        </div>
+        <div class="col-md-3 col-lg-3">
+
+        </div>
+    </nav>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <div class="btn-group">
+            <button type="button" data-ui-sref="home"class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-home"></i> Home</div>
+            </button>
+            <button type="button" data-ui-sref="news" class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-newspaper-o"></i> News</div>
+            </button>
+            <button type="button" data-ui-sref="community" class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-trophy"></i> Forums</div>
+            </button>
+            <button type="button" data-ui-sref="home" class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-university"></i> Guilds</div>
+            </button>
+            <button type="button" data-ui-sref="chat" class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-weixin"></i> Chat</div>
+            </button>
+            <button type="button" data-ui-sref="store" class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-shopping-cart"></i> Store</div>
+            </button>
+            <button type="button" data-ui-sref="support" class="btn btn-lg navbar-btn" ui-sref-active="active">
+                <div style="color:white;"><i class="fa fa-question"></i> Support</div>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+package: WindsOfArithia
+import:
+- package: github.com/denisenkom/go-mssqldb
+  subpackages:
+  - github.com\denisenkom\go-mssqldb
+- package: github.com/dgrijalva/jwt-go
+  subpackages:
+  - github.com\dgrijalva\jwt-go
+- package: github.com/fogcreek/mini
+  subpackages:
+  - github.com\fogcreek\mini
+- package: github.com/go-xorm/xorm
+  subpackages:
+  - github.com\go-xorm\xorm
+- package: github.com/kataras/iris
+  subpackages:
+  - github.com\kataras\iris
+  - github.com\kataras\iris\middleware\logger
+  - github.com\kataras\iris\middleware\recovery
+  - github.com\kataras\iris\websocket
+- package: github.com/sendgrid/sendgrid-go
+  subpackages:
+  - github.com\sendgrid\sendgrid-go
+- package: github.com/valyala/fasthttp
+  subpackages:
+  - github.com\valyala\fasthttp

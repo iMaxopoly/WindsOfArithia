@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="text-center"><h2>Chat</h2></div>
+    <div class="panel panel-default" style="overflow: hidden;">
+        <div class="panel-body" style="height: 400px;overflow-y: scroll;" data-scroll-glue>
+            <!--<div ng-repeat="job in jobs">{[job]}</div>-->
+
+            <ul class="media-list">
+
+                <li data-ng-repeat="msg in messages" class="media">
+
+                    <div class="media-body">
+
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img data-img-preload style="height:50px; width:50px;" class="media-object img-circle fade"
+                                     data-ng-src="{[msg.dp]}"/>
+                            </a>
+
+                            <div class="media-body">
+                                {[msg.message]}
+                                <br/>
+                                <small class="text-muted">{[msg.username]} | {[msg.timeStamp]}</small>
+                                <hr/>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="panel-footer">
+            <div class="input-group">
+                <input type="text" class="form-control" data-ng-enter="send(msg)" data-ng-model="msg"
+                       placeholder="Enter Message"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-info" data-ng-click="send(msg)"
+                                                type="button">SEND
+                                        </button>
+                                    </span>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div data-ng-include="'init-footer'"></div>

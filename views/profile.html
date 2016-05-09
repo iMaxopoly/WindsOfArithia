@@ -1,0 +1,103 @@
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/users">
+                <img data-img-preload class="img-responsive img-circle center-block fade"
+                     data-ng-src="{[profile_image]}">
+            </a>
+        </div>
+        <div class="col-sm-9">
+            <div class="text-center">
+                <h1>{[display_name]}</h1>
+
+                <div class="row">
+                    <button type="button" class="btn btn-info btn-sm"><span class="fa fa-gift"></span> Gift</button>
+                    <button type="button" class="btn btn-info btn-sm"><span class="fa fa-user-plus"></span> Follow
+                    </button>
+                    <button type="button" class="btn btn-info btn-sm"><span class="fa fa-envelope-o"></span> Send Mail
+                    </button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group profile-text">
+                <li class="list-group-item text-muted text-center" contenteditable="false">Profile</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span>
+                    2.13.2014
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last
+                    seen</strong></span> Yesterday
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real
+                    name</strong></span> Joseph
+                    Doe
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Gender: </strong></span>
+                    {[gender]}
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Age: </strong></span>
+                    {[age]}
+
+                </li>
+            </ul>
+
+            <ul class="list-group profile-text  ">
+                <li class="list-group-item text-muted text-center">Activity <i class="fa fa-dashboard fa-1x"></i>
+
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Time spent
+                    ingame:</strong></span> 125
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong
+                        class="">Referred:</strong></span> 13
+                </li>
+            </ul>
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Social Media</div>
+                <div class="panel-body text-center"><i class="fa fa-facebook fa-2x"></i> <i
+                        class="fa fa-github fa-2x"></i>
+                    <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i
+                            class="fa fa-google-plus fa-2x"></i>
+
+                </div>
+            </div>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9" contenteditable="false" style="">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">{[display_name]}'s Signature</div>
+                <div class="panel-body">
+                    <img data-img-preload class="img-responsive center-block fade" data-ng-src="{[profile_signature]}">
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">{[display_name]}'s Bio</div>
+                <div class="panel-body">
+                    <div class="text-center">
+                        <span data-ng-bind-html="bio"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default target">
+                <div class="panel-heading text-center" contenteditable="false">{[display_name]}'s follower</div>
+                <div class="panel-body text-center">
+                        <span data-ng-repeat="follower in followers">
+                                <img data-img-preload style="height: 48px; width: 48px;" class="img-circle fade"
+                                     data-ng-src="{[follower.dpUrl]}" alt="{[follower.name]}">
+                        </span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="push"></div>
+</div>
+<div data-ng-include="'init-footer'"></div>

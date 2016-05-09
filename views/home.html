@@ -1,0 +1,60 @@
+<div class="row" style="padding-top: 5em;">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="text-center"><h1>Ready to join the bandwagon?</h1><br/>If you haven't already then click
+            the following links to signup/download and start playing!
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="text-right">
+            <a data-ui-sref="register">
+                <button type="button" class="btn btn-lg navbar-btn">Register</button>
+            </a>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="text-left">
+            <button type="button" class="btn btn-lg navbar-btn" data-ng-click="DownloadModel('sm')">Download</button>
+        </div>
+    </div>
+</div>
+
+<div class="text-center" style="padding-top: 5em;">
+    <h1>So what's so different about 'Winds of Arithia'?</h1>
+</div>
+
+<div style="height: 305px;padding-top: 8em;">
+    <carousel interval="slideInterval" class="animated bounceIn">
+        <slide ng-repeat="slide in slides" active="slide.active">
+            <img data-img-preload data-ng-src="{[slide.image]}" class="animated bounceIn" style="margin:auto;">
+        </slide>
+    </carousel>
+</div>
+
+
+<div class="row" style="padding-top: 12em">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="text-center"><h3>Community-oriented</h3><br/>
+            <img data-img-preload data-ng-src="/static/img/dn-community.png" class="img-responsive center-block animated flipInX"
+                 style="pointer-events: none;"/><br/>
+            Here at "Winds of Arithia" we strive to make your gaming experience enjoyable. With an active staff, you will find helpful answers to any questions you may have. You can make new friends, build up your guild, help a novice player, and that's only a few ideas of how to utilize our community. You, the players, are our first priority so feel free to make any suggestions or comments on our forums.
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="text-center"><h3>Events and Contests</h3><br/>
+            <img data-img-preload data-ng-src="/static/img/dn-kingdom.png" class="img-responsive center-block animated flipInX"
+                 style="pointer-events: none;"/><br/>
+            You will find we have many intersting ideas to enhance your gaming experience. We will have contests, events and just plain fun activities. We will plan a weekly event which will be posted on the forums, and we will have surprise contests and activites. Come join the fun and bring your friends.
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="text-center"><h3>Gameplay Revitalized</h3><br/>
+            <img data-img-preload data-ng-src="/static/img/dn-gameplay.png" class="img-responsive center-block animated flipInX"
+                 style="pointer-events: none;"/><br/>
+            "Winds of Arithia" is a unique server with many changes. Such as our profession system where you will be able to pick one of our exclusive trades to either benefit yourself, your guild, or to sell in your shop. We have an uncommon money system as well where you will smelt your mine drops into currency. And who knows, there may even be a surprise or two from bosses and mobs.
+        </div>
+    </div>
+</div>
+
+<div data-ng-include="'init-footer'"></div>
